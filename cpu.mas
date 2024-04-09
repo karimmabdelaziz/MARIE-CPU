@@ -1,0 +1,1041 @@
+﻿Start, Input
+Store N
+
+// Choose [Jump] to function
+/ 1: Add Two Numbers
+/ 2: Subtract Two Numbers
+/ 3: Multiply Two Numbers
+/ 4: Divide Two Numbers
+/ 5: Find MOD of Two Numbers
+/ 6: Read NxN Matrix (STATIC MEMORY, MAX 5x5)
+/ 7: Choose Two Matrices from previous Function
+/ 8: Add the Two selected Matrices
+/ 9: Subtract the Two selected Matrices
+/ 10: Multiply the Two selected Matrices
+/ 11: Get Determinant of the first selected Matrix
+
+
+Check1, Load N
+Subt One
+Skipcond 400
+Jump Check2
+JnS First
+Jump Start
+
+Check2, Load N
+Subt Two
+Skipcond 400
+Jump Check3
+JnS Second
+Jump Start
+
+Check3, Load N
+Subt Three
+Skipcond 400
+Jump Check4
+JnS Third
+Jump Start
+
+Check4, Load N
+Subt Four
+Skipcond 400
+Jump Check5
+JnS Fourth
+Jump Start
+
+Check5, Load N
+Subt Five
+Skipcond 400
+Jump Check6
+JnS Fifth
+Jump Start
+
+Check6, Load N
+Subt Six
+Skipcond 400
+Jump Check7
+JnS Sixth
+Jump Start
+
+Check7, Load N
+Subt Seven
+Skipcond 400
+Jump Check8
+JnS Seventh
+Jump Start
+
+Check8, Load N
+Subt Eight
+Skipcond 400
+Jump Check9
+JnS Eighth
+Jump Start
+
+Check9, Load N
+Subt Nine
+Skipcond 400
+Jump Check10
+JnS Ninth
+Jump Start
+
+Check10, Load N
+Subt Ten
+Skipcond 400
+Jump Check11
+JnS Function10
+Jump Start
+
+Check11, Load N
+Subt Eleven
+Skipcond 400
+Jump Check12
+JnS Function11
+Jump Start
+
+Check12, Jump Start
+
+// Functions
+
+/ - FIRST FUNCTION - 
+
+First, Clear
+Input
+Store Temp
+Input
+Add Temp
+Output
+JumpI First
+
+/ - SECOND FUNCTION - 
+
+Second, Clear
+Input
+Store Temp
+Input
+Store Temp2
+Load Temp
+Subt Temp2
+Output
+JumpI Second
+
+/ - THIRD FUNCTION - 
+
+Third, Clear
+Store Sum
+Input
+Store X
+Input
+Store Y
+
+MultLoop, Load Sum
+Add X
+Store Sum
+Load Y
+Subt One
+Store Y
+Skipcond 400
+Jump MultLoop
+Load Sum
+Output
+JumpI Third
+
+/ - FOURTH FUNCTION - 
+
+Fourth, Clear
+Store DivCounter
+Input
+Store X
+Input
+Store Y
+
+DivLoop, Load X
+Subt Y
+Store X
+Skipcond 000
+Jump AddDivCounter
+Load DivCounter
+Output
+JumpI Fourth
+AddDivCounter, Load DivCounter
+Add One
+Store DivCounter
+Jump DivLoop
+
+/ - FIFTH FUNCTION - 
+
+Fifth, Clear
+Input
+Store X
+Input
+Store Y
+
+ModLoop, Load X
+Subt Y
+Store X
+Skipcond 000
+Jump ModLoop
+Add Y
+Output
+JumpI Fifth
+
+/ - SIXTH FUNCTION - 
+
+Sixth, Clear
+NInput, Input
+Store Rows
+Store Cols
+Store Temp
+Store Temp2
+
+/ - Check Row Counter
+Subt Six
+Skipcond 000
+Jump NInput
+Jump ReadArr1
+
+ReadArr1, Input
+StoreI Arr1
+Load Arr1
+Add One
+Store Arr1
+Load Temp
+Subt One
+Store Temp
+Skipcond 400
+Jump ReadArr1
+
+PrintArr1, LoadI Arr1Top
+Output
+Load Arr1Top
+Add One
+Store Arr1Top
+Load Temp2
+Subt One
+Store Temp2
+Skipcond 400
+Jump PrintArr1
+
+/ - Check Row Counter
+Load Cols
+Store Temp
+Load Rows
+Subt One
+Store Rows
+Skipcond 400
+Jump ReadArr2
+JumpI Sixth
+
+ReadArr2, Input
+StoreI Arr2
+Load Arr2
+Add One
+Store Arr2
+Load Temp
+Subt One
+Store Temp
+Skipcond 400
+Jump ReadArr2
+
+Load Cols
+Store Temp2
+PrintArr2, LoadI Arr2Top
+Output
+Load Arr2Top
+Add One
+Store Arr2Top
+Load Temp2
+Subt One
+Store Temp2
+Skipcond 400
+Jump PrintArr2
+
+/ - Check Row Counter
+Load Cols
+Store Temp
+Load Rows
+Subt One
+Store Rows
+Skipcond 400
+Jump ReadArr3
+JumpI Sixth
+
+ReadArr3, Input
+StoreI Arr3
+Load Arr3
+Add One
+Store Arr3
+Load Temp
+Subt One
+Store Temp
+Skipcond 400
+Jump ReadArr3
+
+Load Cols
+Store Temp2
+PrintArr3, LoadI Arr3Top
+Output
+Load Arr3Top
+Add One
+Store Arr3Top
+Load Temp2
+Subt One
+Store Temp2
+Skipcond 400
+Jump PrintArr3
+
+/ - Check Row Counter
+Load Cols
+Store Temp
+Load Rows
+Subt One
+Store Rows
+Skipcond 400
+Jump ReadArr4
+JumpI Sixth
+
+ReadArr4, Input
+StoreI Arr4
+Load Arr4
+Add One
+Store Arr4
+Load Temp
+Subt One
+Store Temp
+Skipcond 400
+Jump ReadArr4
+
+Load Cols
+Store Temp2
+PrintArr4, LoadI Arr4Top
+Output
+Load Arr4Top
+Add One
+Store Arr4Top
+Load Temp2
+Subt One
+Store Temp2
+Skipcond 400
+Jump PrintArr4
+
+/ - Check Row Counter
+Load Cols
+Store Temp
+Load Rows
+Subt One
+Store Rows
+Skipcond 400
+Jump ReadArr5
+JumpI Sixth
+
+ReadArr5, Input
+StoreI Arr5
+Load Arr5
+Add One
+Store Arr5
+Load Temp
+Subt One
+Store Temp
+Skipcond 400
+Jump ReadArr5
+
+Load Cols
+Store Temp2
+PrintArr5, LoadI Arr5Top
+Output
+Load Arr5Top
+Add One
+Store Arr5Top
+Load Temp2
+Subt One
+Store Temp2
+Skipcond 400
+Jump PrintArr5
+JumpI Sixth
+
+/ - SEVENTH FUNCTION -
+
+Seventh, Clear
+Input
+Store N
+Store Temp
+Input 
+Store N2
+Store Temp2
+
+Load N
+Subt One
+Skipcond 000
+Jump ArrSelectCheck
+Jump Seventh
+
+ArrSelectCheck, Load N
+Subt One
+Skipcond 400
+Jump ArrSelectCheck2
+Jump SelectArrayRead1
+ArrSelectCheck2, Load N
+Subt Two
+Skipcond 400
+Jump ArrSelectCheck3
+Jump SelectArrayRead2
+ArrSelectCheck3, Load N
+Subt Three
+Skipcond 400
+Jump ArrSelectCheck4
+Jump SelectArrayRead3
+ArrSelectCheck4, Load N
+Subt Four
+Skipcond 400
+Jump ArrSelectCheck5
+Jump SelectArrayRead4
+ArrSelectCheck5, Load N
+Subt Five
+Skipcond 400
+JumpI Seventh
+Jump SelectArrayRead5
+
+SelectArrayRead1, LoadI Arr1ReadA
+Store A1
+Load Arr1ReadA
+Add One
+Store Arr1ReadA
+LoadI Arr1ReadA
+Store A2
+Load Arr1ReadA
+Add One
+Store Arr1ReadA
+LoadI Arr1ReadA
+Store A3
+Load Arr1ReadA
+Add One
+Store Arr1ReadA
+LoadI Arr1ReadA
+Store A4
+Load Arr1ReadA
+Add One
+Store Arr1ReadA
+LoadI Arr1ReadA
+Store A5
+Jump ArrSelectPart2
+
+
+SelectArrayRead2, LoadI Arr2ReadA
+Store A1
+Load Arr2ReadA
+Add One
+Store Arr2ReadA
+LoadI Arr2ReadA
+Store A2
+Load Arr2ReadA
+Add One
+Store Arr2ReadA
+LoadI Arr2ReadA
+Store A3
+Load Arr2ReadA
+Add One
+Store Arr2ReadA
+LoadI Arr2ReadA
+Store A4
+Load Arr2ReadA
+Add One
+Store Arr2ReadA
+LoadI Arr2ReadA
+Store A5
+Jump ArrSelectPart2
+
+SelectArrayRead3, LoadI Arr3ReadA
+Store A1
+Load Arr3ReadA
+Add One
+Store Arr3ReadA
+LoadI Arr3ReadA
+Store A2
+Load Arr3ReadA
+Add One
+Store Arr3ReadA
+LoadI Arr3ReadA
+Store A3
+Load Arr3ReadA
+Add One
+Store Arr3ReadA
+LoadI Arr3ReadA
+Store A4
+Load Arr3ReadA
+Add One
+Store Arr3ReadA
+LoadI Arr3ReadA
+Store A5
+Jump ArrSelectPart2
+
+SelectArrayRead4, LoadI Arr4ReadA
+Store A1
+Load Arr4ReadA
+Add One
+Store Arr4ReadA
+LoadI Arr4ReadA
+Store A2
+Load Arr4ReadA
+Add One
+Store Arr4ReadA
+LoadI Arr4ReadA
+Store A3
+Load Arr4ReadA
+Add One
+Store Arr4ReadA
+LoadI Arr4ReadA
+Store A4
+Load Arr4ReadA
+Add One
+Store Arr4ReadA
+LoadI Arr4ReadA
+Store A5
+Jump ArrSelectPart2
+
+SelectArrayRead5, LoadI Arr5ReadA
+Store A1
+Load Arr5ReadA
+Add One
+Store Arr5ReadA
+LoadI Arr5ReadA
+Store A2
+Load Arr5ReadA
+Add One
+Store Arr5ReadA
+LoadI Arr5ReadA
+Store A3
+Load Arr5ReadA
+Add One
+Store Arr5ReadA
+LoadI Arr5ReadA
+Store A4
+Load Arr5ReadA
+Add One
+Store Arr5ReadA
+LoadI Arr5ReadA
+Store A5
+Jump ArrSelectPart2
+
+
+ArrSelectPart2, Load N2
+Subt One
+Skipcond 000
+Jump Arr2SelectCheck
+Jump Seventh
+
+Arr2SelectCheck, Load N2
+Subt One
+Skipcond 400
+Jump Arr2SelectCheck2
+Jump SelectArray2Read1
+Arr2SelectCheck2, Load N2
+Subt Two
+Skipcond 400
+Jump Arr2SelectCheck3
+Jump SelectArray2Read2
+Arr2SelectCheck3, Load N2
+Subt Three
+Skipcond 400
+Jump Arr2SelectCheck4
+Jump SelectArray2Read3
+Arr2SelectCheck4, Load N2
+Subt Four
+Skipcond 400
+Jump Arr2SelectCheck5
+Jump SelectArray2Read4
+Arr2SelectCheck5, Load N2
+Subt Five
+Skipcond 400
+JumpI Seventh
+Jump SelectArray2Read5
+
+SelectArray2Read1, LoadI Arr1ReadB
+Store B1
+Load Arr1ReadB
+Add One
+Store Arr1ReadB
+LoadI Arr1ReadB
+Store B2
+Load Arr1ReadB
+Add One
+Store Arr1ReadB
+LoadI Arr1ReadB
+Store B3
+Load Arr1ReadB
+Add One
+Store Arr1ReadB
+LoadI Arr1ReadB
+Store B4
+Load Arr1ReadB
+Add One
+Store Arr1ReadB
+LoadI Arr1ReadB
+Store B5
+Load B1
+Output
+Halt
+JumpI Seventh
+
+SelectArray2Read2, LoadI Arr2ReadB
+Store B1
+Load Arr2ReadB
+Add One
+Store Arr2ReadB
+LoadI Arr2ReadB
+Store B2
+Load Arr2ReadB
+Add One
+Store Arr2ReadB
+LoadI Arr2ReadB
+Store B3
+Load Arr2ReadB
+Add One
+Store Arr2ReadB
+LoadI Arr2ReadB
+Store B4
+Load Arr2ReadB
+Add One
+Store Arr2ReadB
+LoadI Arr2ReadB
+Store B5
+JumpI Seventh
+
+SelectArray2Read3, LoadI Arr3ReadB
+Store B1
+Load Arr3ReadB
+Add One
+Store Arr3ReadB
+LoadI Arr3ReadB
+Store B2
+Load Arr3ReadB
+Add One
+Store Arr3ReadB
+LoadI Arr3ReadB
+Store B3
+Load Arr3ReadB
+Add One
+Store Arr3ReadB
+LoadI Arr3ReadB
+Store B4
+Load Arr3ReadB
+Add One
+Store Arr3ReadB
+LoadI Arr3ReadA
+Store B5
+JumpI Seventh
+
+SelectArray2Read4, LoadI Arr4ReadB
+Store B1
+Load Arr4ReadB
+Add One
+Store Arr4ReadB
+LoadI Arr4ReadB
+Store B2
+Load Arr4ReadB
+Add One
+Store Arr4ReadB
+LoadI Arr4ReadB
+Store B3
+Load Arr4ReadB
+Add One
+Store Arr4ReadB
+LoadI Arr4ReadB
+Store B4
+Load Arr4ReadB
+Add One
+Store Arr4ReadB
+LoadI Arr4ReadB
+Store B5
+JumpI Seventh
+
+
+SelectArray2Read5, LoadI Arr5ReadB
+Store B1
+Load Arr5ReadB
+Add One
+Store Arr5ReadB
+LoadI Arr5ReadB
+Store B2
+Load Arr5ReadB
+Add One
+JumpI Seventh
+LoadI Arr5ReadB
+Store B3
+Load Arr5ReadB
+Add One
+Store Arr5ReadB
+LoadI Arr5ReadB
+Store B4
+Load Arr5ReadB
+Add One
+Store Arr5ReadB
+LoadI Arr5ReadB
+Store B5
+JumpI Seventh
+
+/ - EIGHTH FUNCTION -
+
+Eighth, Clear
+Load Cols
+Store Temp
+
+Load A1
+Add B1
+Output
+Load Temp
+Subt One
+Store Temp
+Skipcond 800
+JumpI Eighth
+
+Load A2
+Add B2
+Output
+Load Temp
+Subt One
+Store Temp
+Skipcond 800
+JumpI Eighth
+
+Load A3
+Add B3
+Output
+Load Temp
+Subt One
+Store Temp
+Skipcond 800
+JumpI Eighth
+
+Load A4
+Add B4
+Output
+Load Temp
+Subt One
+Store Temp
+Skipcond 800
+JumpI Eighth
+
+Load A5
+Add B5
+Output
+JumpI Eighth
+
+/ - NINTH FUNCTION -
+
+Ninth, Clear
+Load Cols
+Store Temp
+
+Load A1
+Subt B1
+Output
+Load Temp
+Subt One
+Store Temp
+Skipcond 800
+JumpI Ninth
+
+Load A2
+Subt B2
+Output
+Load Temp
+Subt One
+Store Temp
+Skipcond 800
+JumpI Ninth
+
+Load A3
+Subt B3
+Output
+Load Temp
+Subt One
+Store Temp
+Skipcond 800
+JumpI Ninth
+
+Load A4
+Subt B4
+Output
+Load Temp
+Subt One
+Store Temp
+Skipcond 800
+JumpI Ninth
+
+Load A5
+Subt B5
+Output
+JumpI Ninth
+
+/ - Function 10 -
+
+Function10, Clear
+Store Sum
+
+CalcC1, Load A1
+Store Temp
+Load B2
+Store Temp2
+
+LoopC1, Load Sum
+Add Temp
+Store Sum
+Load Temp2
+Subt One
+Store Temp2
+Skipcond 400
+Jump LoopC1
+
+Load A2
+Store Temp
+Load B3
+Store Temp2
+
+Loop2C1, Load Sum
+Add Temp
+Store Sum
+Load Temp2
+Subt One
+Store Temp2
+Skipcond 400
+Jump Loop2C1
+Load Sum
+Store C1
+
+CalcC2, Load A1
+Store Temp
+Load B2
+Store Temp2
+Clear
+Store Sum
+
+LoopC2, Load Sum
+Add Temp
+Store Sum
+Load Temp2
+Subt One
+Store Temp2
+Skipcond 400
+Jump LoopC2
+
+Load A2
+Store Temp
+Load B4
+Store Temp2
+
+Loop2C2, Load Sum
+Add Temp
+Store Sum
+Load Temp2
+Subt One
+Store Temp2
+Skipcond 400
+Jump Loop2C2
+Load Sum
+Store C2
+
+CalcC3, Load A3
+Store Temp
+Load B1
+Store Temp2
+Clear
+Store Sum
+
+LoopC3, Load Sum
+Add Temp
+Store Sum
+Load Temp2
+Subt One
+Store Temp2
+Skipcond 400
+Jump LoopC3
+
+Load A4
+Store Temp
+Load B3
+Store Temp2
+
+Loop2C3, Load Sum
+Add Temp
+Store Sum
+Load Temp2
+Subt One
+Store Temp2
+Skipcond 400
+Jump Loop2C3
+Load Sum
+Store C3
+
+CalcC4, Load A3
+Store Temp
+Load B2
+Store Temp2
+Clear
+Store Sum
+
+LoopC4, Load Sum
+Add Temp
+Store Sum
+Load Temp2
+Subt One
+Store Temp2
+Skipcond 400
+Jump LoopC4
+
+Load A4
+Store Temp
+Load B4
+Store Temp2
+
+Loop2C4, Load Sum
+Add Temp
+Store Sum
+Load Temp2
+Subt One
+Store Temp2
+Skipcond 400
+Jump Loop2C4
+Load Sum
+Store C4
+
+Load C1
+Output
+Load C2
+Output
+Load C3
+Output
+Load C4
+Output
+JumpI Function10
+
+/ - Function 11 -
+
+Function11, Clear
+Store Sum1
+Store Sum2
+
+Load A1
+Store Temp
+Load A4
+Store Temp2
+
+CalcSum1, Load Sum1
+Add Temp
+Store Sum1
+Load Temp2
+Subt One
+Store Temp2
+Skipcond 400
+Jump CalcSum1
+
+Load A2
+Store Temp
+Load A3
+Store Temp2
+
+CalcSum2, Load Sum2
+Add Temp
+Store Sum2
+Load Temp2
+Subt One
+Store Temp2
+Skipcond 400
+Jump CalcSum2
+
+Load Sum1
+Subt Sum2
+Output
+
+JumpI Function11
+
+/ --- Data
+
+One, DEC 1
+Two, DEC 2
+Three, DEC 3
+Four, DEC 4
+Five, DEC 5
+Six, DEC 6
+Seven, DEC 7
+Eight, DEC 8
+Nine, DEC 9
+Ten, DEC 10
+Eleven, DEC 11
+/ -
+X, DEC 0
+Y, DEC 0
+N, DEC 0
+N2, DEC 0
+Sum, DEC 0
+Sum1, DEC 0
+Sum2, DEC 0
+Temp, DEC 0
+Temp2, DEC 0
+DivCounter, DEC 0
+Rows, DEC 0
+Cols, DEC 0
+/ - Arrays
+Arr1Top, HEX 8900
+Arr1ReadA, HEX 8900
+Arr1ReadB, HEX 8900
+Arr1, HEX 8900
+DEC 0
+DEC 0
+DEC 0
+DEC 0
+DEC 0
+/ -
+Arr2Top, HEX 8910
+Arr2ReadA, HEX 8910
+Arr2ReadB, HEX 8910
+Arr2, HEX 8910
+DEC 0
+DEC 0
+DEC 0
+DEC 0
+DEC 0
+/ -
+Arr3Top, HEX 8920
+Arr3ReadA, HEX 8920
+Arr3ReadB, HEX 8920
+Arr3, HEX 8920
+DEC 0
+DEC 0
+DEC 0
+DEC 0
+DEC 0
+/ -
+Arr4Top, HEX 8930
+Arr4ReadA, HEX 8930
+Arr4ReadB, HEX 8930
+Arr4, HEX 8930
+DEC 0
+DEC 0
+DEC 0
+DEC 0
+DEC 0
+/ -
+Arr5Top, HEX 8940
+Arr5ReadA, HEX 8940
+Arr5ReadB, HEX 8940
+Arr5, HEX 8940
+DEC 0
+DEC 0
+DEC 0
+DEC 0
+DEC 0
+/ -
+A1, DEC 0
+A2, DEC 0
+A3, DEC 0
+A4, DEC 0
+A5, DEC 0
+B1, DEC 0
+B2, DEC 0
+B3, DEC 0
+B4, DEC 0
+B5, DEC 0
+C1, DEC 0
+C2, DEC 0
+C3, DEC 0
+C4, DEC 0
+C5, DEC 0
